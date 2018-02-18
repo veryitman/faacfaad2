@@ -47,7 +47,7 @@ CPU=
 if [ "$ARCH" = "x86_64" ]
 then
 SIMULATOR="-mios-simulator-version-min=7.0"
-HOST=
+HOST="--host=x86_64-apple-darwin"
 else
 SIMULATOR="-mios-simulator-version-min=5.0"
 HOST="--host=i386-apple-darwin"

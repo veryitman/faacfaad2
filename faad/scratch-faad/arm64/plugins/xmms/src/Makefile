@@ -14,9 +14,9 @@
 
 
 
-srcdir = /Users/mark/Desktop/faad/faad/plugins/xmms/src
-top_srcdir = /Users/mark/Desktop/faad/faad
-VPATH = /Users/mark/Desktop/faad/faad/plugins/xmms/src
+srcdir = /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/plugins/xmms/src
+top_srcdir = /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad
+VPATH = /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/plugins/xmms/src
 pkgdatadir = $(datadir)/faad2
 pkglibdir = $(libdir)/faad2
 pkgincludedir = $(includedir)/faad2
@@ -75,14 +75,14 @@ DIST_SOURCES = $(libmp4_la_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /Users/mark/Desktop/faad/faad/missing --run aclocal-1.9
+ACLOCAL = ${SHELL} /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/missing --run aclocal-1.9
 AMDEP_FALSE = #
 AMDEP_TRUE = 
-AMTAR = ${SHELL} /Users/mark/Desktop/faad/faad/missing --run tar
+AMTAR = ${SHELL} /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/missing --run tar
 AR = ar
-AUTOCONF = ${SHELL} /Users/mark/Desktop/faad/faad/missing --run autoconf
-AUTOHEADER = ${SHELL} /Users/mark/Desktop/faad/faad/missing --run autoheader
-AUTOMAKE = ${SHELL} /Users/mark/Desktop/faad/faad/missing --run automake-1.9
+AUTOCONF = ${SHELL} /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/missing --run autoconf
+AUTOHEADER = ${SHELL} /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/missing --run autoheader
+AUTOMAKE = ${SHELL} /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/missing --run automake-1.9
 AWK = gawk
 CC = xcrun -sdk iphoneos clang -Wno-error=unused-command-line-argument-hard-error-in-future
 CCDEPMODE = depmode=gcc3
@@ -118,10 +118,10 @@ LDFLAGS = -arch arm64
 LIBOBJS = 
 LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
-LIBTOOL_DEPS = /Users/mark/Desktop/faad/faad/./ltmain.sh
+LIBTOOL_DEPS = /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/./ltmain.sh
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /Users/mark/Desktop/faad/faad/missing --run makeinfo
+MAKEINFO = ${SHELL} /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/missing --run makeinfo
 MP4FF_LIBS = 
 OBJEXT = o
 PACKAGE = faad2
@@ -170,7 +170,7 @@ host_vendor = apple
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = /Users/mark/Desktop/faad/faad/install-sh
+install_sh = /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/faad/install-sh
 libdir = `$(XMMS_CONFIG) --input-plugin-dir`
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -179,7 +179,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(install_sh) -d
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /Users/mark/Desktop/faad/thin-faad/arm64
+prefix = /Users/mark/workspace/mzProjs/myGithub/faacfaad2/faad/thin-faad/arm64
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
