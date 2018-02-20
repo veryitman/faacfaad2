@@ -17,6 +17,10 @@
 		4D79E5A620372D110031D13C /* libfaac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79E5A520372D110031D13C /* libfaac.a */; };
 		4DD64A29201A2B63003A8044 /* MZCodec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DD64A27201A2B63003A8044 /* MZCodec.cpp */; };
 		4DD64A2E201A3121003A8044 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD64A2D201A3121003A8044 /* AVFoundation.framework */; };
+		4DDDF2DA20383A53004759A9 /* wavreader.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDF2D820383A52004759A9 /* wavreader.c */; };
+		4DDDF2E62039B237004759A9 /* libmp4ff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDDF2E42039B237004759A9 /* libmp4ff.a */; };
+		4DDDF2E72039B237004759A9 /* libfaad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDDF2E52039B237004759A9 /* libfaad.a */; };
+		4DDDF2E92039B70B004759A9 /* mm.aac in Resources */ = {isa = PBXBuildFile; fileRef = 4DDDF2E82039B70B004759A9 /* mm.aac */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,15 @@
 		4DD64A27201A2B63003A8044 /* MZCodec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MZCodec.cpp; sourceTree = "<group>"; };
 		4DD64A28201A2B63003A8044 /* MZCodec.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MZCodec.hpp; sourceTree = "<group>"; };
 		4DD64A2D201A3121003A8044 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4DDDF2D820383A52004759A9 /* wavreader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wavreader.c; sourceTree = "<group>"; };
+		4DDDF2D920383A52004759A9 /* wavreader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavreader.h; sourceTree = "<group>"; };
+		4DDDF2DF2039B237004759A9 /* neaacdec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neaacdec.h; sourceTree = "<group>"; };
+		4DDDF2E02039B237004759A9 /* mp4ff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mp4ff.h; sourceTree = "<group>"; };
+		4DDDF2E12039B237004759A9 /* mp4ffint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mp4ffint.h; sourceTree = "<group>"; };
+		4DDDF2E22039B237004759A9 /* faad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = faad.h; sourceTree = "<group>"; };
+		4DDDF2E42039B237004759A9 /* libmp4ff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp4ff.a; sourceTree = "<group>"; };
+		4DDDF2E52039B237004759A9 /* libfaad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfaad.a; sourceTree = "<group>"; };
+		4DDDF2E82039B70B004759A9 /* mm.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = mm.aac; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DDDF2E72039B237004759A9 /* libfaad.a in Frameworks */,
+				4DDDF2E62039B237004759A9 /* libmp4ff.a in Frameworks */,
 				4D79E5A620372D110031D13C /* libfaac.a in Frameworks */,
 				4DD64A2E201A3121003A8044 /* AVFoundation.framework in Frameworks */,
 			);
@@ -86,6 +101,8 @@
 		4D0A16C2201591950001844A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4DDDF2D920383A52004759A9 /* wavreader.h */,
+				4DDDF2D820383A52004759A9 /* wavreader.c */,
 				4D0A16C3201591950001844A /* AppDelegate.h */,
 				4D0A16C5201591950001844A /* AppDelegate.m */,
 				4D0A16C6201591950001844A /* ViewController.h */,
@@ -100,6 +117,7 @@
 		4D0A16C9201591DE0001844A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				4DDDF2DD2039B237004759A9 /* faad */,
 				4D79E5A020372D110031D13C /* faac */,
 			);
 			path = Vendor;
@@ -108,6 +126,7 @@
 		4D0A19D5201594F10001844A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4DDDF2E82039B70B004759A9 /* mm.aac */,
 				4D0A1B6B2015D6600001844A /* m.wav */,
 			);
 			path = Resource;
@@ -145,6 +164,35 @@
 				4DD64A2D201A3121003A8044 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DDDF2DD2039B237004759A9 /* faad */ = {
+			isa = PBXGroup;
+			children = (
+				4DDDF2DE2039B237004759A9 /* include */,
+				4DDDF2E32039B237004759A9 /* lib */,
+			);
+			path = faad;
+			sourceTree = "<group>";
+		};
+		4DDDF2DE2039B237004759A9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				4DDDF2DF2039B237004759A9 /* neaacdec.h */,
+				4DDDF2E02039B237004759A9 /* mp4ff.h */,
+				4DDDF2E12039B237004759A9 /* mp4ffint.h */,
+				4DDDF2E22039B237004759A9 /* faad.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		4DDDF2E32039B237004759A9 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				4DDDF2E42039B237004759A9 /* libmp4ff.a */,
+				4DDDF2E52039B237004759A9 /* libfaad.a */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DDDF2E92039B70B004759A9 /* mm.aac in Resources */,
 				4D0A169D20158BA60001844A /* LaunchScreen.storyboard in Resources */,
 				4D0A169A20158BA60001844A /* Assets.xcassets in Resources */,
 				4D0A1B6C2015D6600001844A /* m.wav in Resources */,
@@ -221,6 +270,7 @@
 			files = (
 				4D0A16C7201591950001844A /* ViewController.mm in Sources */,
 				4D0A16A020158BA60001844A /* main.m in Sources */,
+				4DDDF2DA20383A53004759A9 /* wavreader.c in Sources */,
 				4D0A16C8201591950001844A /* AppDelegate.m in Sources */,
 				4DD64A29201A2B63003A8044 /* MZCodec.cpp in Sources */,
 			);
@@ -367,6 +417,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MZAudioCodec/Classes/Vendor/**",
 					"$(PROJECT_DIR)/MZAudioCodec/Classes/Vendor/faac/lib",
+					"$(PROJECT_DIR)/MZAudioCodec/Classes/Vendor/fdk-aac-ios/lib",
+					"$(PROJECT_DIR)/MZAudioCodec/Classes/Vendor/faad/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.veryitman.audio.codec.MZAudioCodec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -387,6 +439,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MZAudioCodec/Classes/Vendor/**",
 					"$(PROJECT_DIR)/MZAudioCodec/Classes/Vendor/faac/lib",
+					"$(PROJECT_DIR)/MZAudioCodec/Classes/Vendor/fdk-aac-ios/lib",
+					"$(PROJECT_DIR)/MZAudioCodec/Classes/Vendor/faad/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.veryitman.audio.codec.MZAudioCodec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
