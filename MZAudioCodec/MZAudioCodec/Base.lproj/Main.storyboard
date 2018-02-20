@@ -27,11 +27,20 @@
                                     <action selector="doWAV2AACAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ryH-OC-qu5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3p-RW-7R1">
+                                <rect key="frame" x="246" y="109" width="97" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="WAV-&gt;AAC"/>
+                                <connections>
+                                    <action selector="doCovertAACToWAVAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hwU-N3-Psp"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd9-YK-deL">
                                 <rect key="frame" x="28" y="186" width="94" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Play"/>
+                                <state key="normal" title="Play AAC"/>
                                 <connections>
                                     <action selector="doAAC2OtherAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rN8-1T-IOQ"/>
                                 </connections>
@@ -43,6 +52,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y49-dp-LrY">
+                                <rect key="frame" x="258" y="186" width="81" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Play WAV"/>
+                                <connections>
+                                    <action selector="playWAVAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c0r-5V-q96"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.84643787202380949" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -50,12 +68,18 @@
                             <constraint firstItem="Vd9-YK-deL" firstAttribute="top" secondItem="HVJ-fe-Q8Q" secondAttribute="bottom" constant="38" id="7vU-XV-J4c"/>
                             <constraint firstItem="LXB-Dl-pzN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="205" id="80U-Iq-z9w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LXB-Dl-pzN" secondAttribute="bottom" id="NuC-1Q-BMV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y49-dp-LrY" secondAttribute="trailing" constant="36" id="Pow-dy-4EV"/>
                             <constraint firstItem="LXB-Dl-pzN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SeR-s5-lSR"/>
+                            <constraint firstItem="y49-dp-LrY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="TP2-c9-cqh"/>
+                            <constraint firstItem="y49-dp-LrY" firstAttribute="top" secondItem="Vd9-YK-deL" secondAttribute="top" id="V4n-g3-4ZK"/>
+                            <constraint firstItem="o3p-RW-7R1" firstAttribute="top" secondItem="HVJ-fe-Q8Q" secondAttribute="top" id="Vsc-P0-GZY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vd9-YK-deL" secondAttribute="trailing" constant="253" id="Xcm-iw-dmC"/>
                             <constraint firstItem="HVJ-fe-Q8Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="bxa-XG-ujZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HVJ-fe-Q8Q" secondAttribute="trailing" constant="250" id="jP9-7z-ax8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LXB-Dl-pzN" secondAttribute="trailing" id="kcD-Rn-aVR"/>
                             <constraint firstItem="Vd9-YK-deL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="mbX-7C-nCm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o3p-RW-7R1" secondAttribute="trailing" constant="32" id="uK9-QA-rIf"/>
+                            <constraint firstItem="o3p-RW-7R1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="yUU-qe-Xof"/>
                             <constraint firstItem="LXB-Dl-pzN" firstAttribute="top" secondItem="Vd9-YK-deL" secondAttribute="bottom" constant="48" id="ynP-WR-n6l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -63,8 +87,10 @@
                     <navigationItem key="navigationItem" id="6Op-kh-GCZ"/>
                     <connections>
                         <outlet property="covertBtn" destination="HVJ-fe-Q8Q" id="gK6-5I-sKS"/>
+                        <outlet property="covertWAVToAACBtn" destination="o3p-RW-7R1" id="aZC-V8-6wB"/>
                         <outlet property="disAearText" destination="LXB-Dl-pzN" id="57g-rB-Y9N"/>
                         <outlet property="playBtn" destination="Vd9-YK-deL" id="knz-pl-plT"/>
+                        <outlet property="playWAVBtn" destination="y49-dp-LrY" id="hDx-GU-V1Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -20,6 +20,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *covertWAVToAACBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *playWAVBtn;
+
 @property (nonatomic, copy) NSString *destFilePath;
 
 @end
@@ -36,6 +40,8 @@
     self.disAearText.text = @"";
     self.playBtn.enabled = NO;
     self.playBtn.alpha = 0.7f;
+    self.playWAVBtn.enabled = NO;
+    self.playWAVBtn.alpha = 0.7f;
 }
 
 - (IBAction)doWAV2AACAction:(id)sender {
@@ -99,6 +105,45 @@
     
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
+}
+
+- (IBAction)doCovertAACToWAVAction:(id)sender {
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *resPath = [bundle pathForResource:@"mm" ofType:@"aac"];
+    NSLog(@"The path of aac file: %@", resPath);
+    
+    NSArray<NSString *> *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *destPath = [[docPath lastObject] stringByAppendingString:@"/out.wav"];
+    NSLog(@"The path of wav file: %@", destPath);
+    
+    self.disAearText.text = @"正在转换...";
+    self.covertWAVToAACBtn.alpha = 0.7f;
+    self.covertWAVToAACBtn.enabled = NO;
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        decodeAAC([resPath UTF8String], [destPath UTF8String]);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            self.disAearText.text = @"转换完成...";
+            self.playWAVBtn.enabled = YES;
+            self.playWAVBtn.alpha = 1.f;
+            self.destFilePath = destPath;
+        });
+    });
+}
+
+- (IBAction)playWAVAction:(id)sender {
+    
+    if (nil == self.destFilePath) {
+        return;
+    }
+    
+    self.disAearText.text = @"正在播放 WAV 音频文件...";
+    
+    [self _playAAC];
 }
 
 @end

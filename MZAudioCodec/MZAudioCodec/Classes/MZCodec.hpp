@@ -11,6 +11,10 @@
 
 #include <stdio.h>
 
+/// 编码: 将 wav 转换为 aac.
 int codeWAV(const char *srcFilePath,  const char *destPath);
+
+/// 解码: 将 aac 转换为 wav.
+int decodeAAC(const char *aacfile, const char *wavename);
 
 #endif /* MZCodec_hpp */
